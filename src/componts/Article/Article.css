@@ -1,0 +1,210 @@
+/* استایل‌های محتوای مقاله — هماهنگ با هویت بصری سایت (سرمه‌ای + طلایی) */
+
+.article-content {
+  --ink: #0f172a;      /* slate-900 */
+  --muted: #475569;    /* slate-600 */
+  --accent: #d97706;   /* amber-600 */
+  --accent-soft: #fef3c7; /* amber-100 */
+  --line: #e2e8f0;     /* slate-200 */
+
+  direction: rtl;
+  font-family: inherit;
+  line-height: 1.9;
+  color: var(--ink);
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: clamp(0.95rem, 0.5vw + 0.85rem, 1.05rem);
+}
+
+/* پاراگراف‌ها */
+.article-content p {
+  margin-bottom: 1.25rem;
+  text-align: justify;
+  text-align-last: right;
+}
+
+/* لینک‌ها */
+.article-content a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+.article-content a:hover {
+  color: #92400e; /* amber-800 */
+}
+
+/* تصاویر */
+.article-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  display: block;
+  margin: 1.5rem auto;
+  box-shadow: 0 8px 24px -12px rgb(15 23 42 / 0.25);
+  object-fit: cover;
+}
+
+.article-content figure {
+  margin: 1.5rem 0;
+}
+
+.article-content figcaption {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .article-content img {
+    max-height: 220px;
+    width: 100%;
+    margin: 1rem auto;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .article-content img {
+    max-width: 95%;
+    max-height: 320px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .article-content img {
+    max-height: 480px;
+  }
+}
+
+/* عنوان‌ها */
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.4;
+  scroll-margin-top: 5rem;
+}
+
+.article-content h1 { font-size: clamp(1.5rem, 1vw + 1.3rem, 2rem); margin: 2rem 0 1rem; }
+.article-content h2 {
+  font-size: clamp(1.3rem, 0.8vw + 1.1rem, 1.6rem);
+  margin: 1.8rem 0 0.9rem;
+  padding-right: 0.75rem;
+  border-right: 3px solid var(--accent);
+}
+.article-content h3 { font-size: 1.25rem; margin: 1.5rem 0 0.7rem; }
+.article-content h4 { font-size: 1.1rem; margin: 1.2rem 0 0.6rem; }
+
+/* لیست‌ها */
+.article-content ul,
+.article-content ol {
+  margin: 0 0 1.25rem;
+  padding-right: 1.5rem;
+}
+
+.article-content ul { list-style: none; }
+
+.article-content ul li {
+  position: relative;
+  padding-right: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.article-content ul li::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.article-content ol {
+  list-style: decimal;
+}
+
+.article-content ol li {
+  margin-bottom: 0.5rem;
+  padding-right: 0.4rem;
+}
+
+/* نقل‌قول */
+.article-content blockquote {
+  margin: 1.75rem 0;
+  padding: 0.9rem 1.25rem;
+  border-right: 3px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 0.5rem;
+  color: #78350f; /* amber-900 */
+  font-style: normal;
+}
+
+.article-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* کد و پیش‌فرمت */
+.article-content code {
+  direction: ltr;
+  display: inline-block;
+  background: #f1f5f9;
+  color: #be123c;
+  border-radius: 0.35rem;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.9em;
+}
+
+.article-content pre {
+  direction: ltr;
+  text-align: left;
+  background: var(--ink);
+  color: #e2e8f0;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.article-content pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+
+/* جدول */
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.article-content th,
+.article-content td {
+  border: 1px solid var(--line);
+  padding: 0.6rem 0.8rem;
+  text-align: right;
+}
+
+.article-content th {
+  background: #f8fafc;
+  font-weight: 700;
+}
+
+/* خط جدا کننده */
+.article-content hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 2.5rem 0;
+}
+
+/* پررنگ و ایتالیک */
+.article-content strong { color: var(--ink); font-weight: 800; }
+.article-content em { color: var(--muted); }

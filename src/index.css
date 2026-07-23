@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'iransans';
+    src: url('/src/assets/fonts/iransansx/IRANSansXLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+    
+body, html{
+    font-family: iransans;
+    overflow-x: hidden;
+    background: #F8F9FD;
+    font-size: 13px;
+}
+
+
+    @media screen and (max-width: 390px) {
+        * {
+            font-size: 11px;
+        }
+    }
+    @media screen and (max-width: 350px) {
+        * {
+            font-size: 9px;
+        }
+    }
